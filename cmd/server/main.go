@@ -2,7 +2,7 @@
  * @Author: shanlonglong danlonglong@weimiao.cn
  * @Date: 2024-12-25 13:53:37
  * @LastEditors: shanlonglong danlonglong@weimiao.cn
- * @LastEditTime: 2024-12-25 14:14:35
+ * @LastEditTime: 2024-12-25 18:09:23
  * @FilePath: \dingding_golang\cmd\server\main.go
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -12,6 +12,7 @@ import (
     "flag"
     "log"
     "dingding_golang/pkg/config"
+    "dingding_golang/pkg/logger"
     "dingding_golang/internal/router"
 
 )
@@ -24,6 +25,11 @@ func main() {
     // 加载配置
     if err := config.Load(env); err != nil {
         log.Fatalf("加载配置失败: %v", err)
+    }
+
+    // 初始化日志
+    if err := logger.Init("logs/app.log", config.Get().Server.Mode); err != nil {
+        log.Fatalf("初始化日志失败: %v", err)
     }
 
     // 初始化路由
