@@ -1,0 +1,20 @@
+server:
+  address: ":8080"
+  mode: "release"
+
+dingtalk:
+  appKey: "${DINGTALK_APP_KEY}"
+  appSecret: "${DINGTALK_APP_SECRET}"
+  agentId: "${DINGTALK_AGENT_ID}"
+
+database:
+  host: "${DB_HOST}"
+  port: ${DB_PORT}
+  user: "${DB_USER}"
+  password: "${DB_PASSWORD}"
+  dbname: "${DB_NAME}"
+
+redis:
+  addr: "${REDIS_ADDR}"
+  password: "${REDIS_PASSWORD}"
+  db: 0 

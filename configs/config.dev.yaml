@@ -1,0 +1,20 @@
+server:
+  address: ":8080"
+  mode: "debug"
+
+dingtalk:
+  appKey: "your-app-key"
+  appSecret: "your-app-secret"
+  agentId: "your-agent-id"
+
+database:
+  host: "localhost"
+  port: 3306
+  user: "root"
+  password: "password"
+  dbname: "dingtalk_service"
+
+redis:
+  addr: "localhost:6379"
+  password: ""
+  db: 0 
