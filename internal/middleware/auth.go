@@ -2,23 +2,27 @@
  * @Author: shanlonglong danlonglong@weimiao.cn
  * @Date: 2024-12-25 14:21:29
  * @LastEditors: shanlonglong danlonglong@weimiao.cn
- * @LastEditTime: 2024-12-25 14:21:39
+ * @LastEditTime: 2024-12-25 15:28:25
  * @FilePath: \dingding_golang\internal\middleware\auth.go
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
 package middleware
 
 import (
-    "net/http"
-    "dingding_golang/pkg/utils"
+	"dingding_golang/pkg/utils"
+	"fmt"
+	"net/http"
+	"strings"
 
-    "github.com/gin-gonic/gin"
+	"github.com/gin-gonic/gin"
 
 )
 
 func Auth() gin.HandlerFunc {
     return func(c *gin.Context) {
         token := c.GetHeader("Authorization")
+        token = strings.TrimPrefix(token, "Bearer ")
+        fmt.Println("token",token)
         if token == "" {
             c.JSON(http.StatusUnauthorized, gin.H{
                 "code": 401,
@@ -38,6 +42,7 @@ func Auth() gin.HandlerFunc {
             c.Abort()
             return
         }
+        fmt.Println("claims", claims)
 
         // 将用户信息存储到上下文
         c.Set("userId", claims.UserId)
