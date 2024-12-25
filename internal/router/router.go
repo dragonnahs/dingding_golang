@@ -1,9 +1,11 @@
 package router
 
 import (
+	"dingding_golang/internal/middleware"
+	"dingding_golang/pkg/config"
+
 	"github.com/gin-gonic/gin"
-	"your-project/internal/middleware"
-	"your-project/pkg/config"
+
 )
 
 func InitRouter() *gin.Engine {
