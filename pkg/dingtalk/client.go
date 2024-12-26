@@ -1,17 +1,17 @@
 package dingtalk
 
 import (
-    "bytes"
-    "dingding_golang/pkg/config"
-    "dingding_golang/pkg/logger"
-    "encoding/json"
-    "fmt"
-    "io"
-    "net/http"
-    "sync"
-    "time"
+	"bytes"
+	"dingding_golang/pkg/config"
+	"dingding_golang/pkg/logger"
+	"encoding/json"
+	"fmt"
+	"io"
+	"net/http"
+	"sync"
+	"time"
 
-    "go.uber.org/zap"
+	"go.uber.org/zap"
 
 )
 

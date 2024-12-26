@@ -3,8 +3,8 @@ server:
   mode: "debug"
 
 dingtalk:
-  appKey: "your-app-key"
-  appSecret: "your-app-secret"
+  appKey: "ding2qr7cxolnro023zk"
+  appSecret: "75ymUMSM3mOVufYGCim3GjFI8Fys8huXX5QkZR4eLnL_RggXHpk1u5WTrPZKBBez"
   agentId: "your-agent-id"
 
 database:
@@ -13,7 +13,6 @@ database:
   user: "root"
   password: "password"
   dbname: "dingtalk_service"
-
 redis:
   addr: "localhost:6379"
   password: ""
